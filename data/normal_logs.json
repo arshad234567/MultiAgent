@@ -1,0 +1,8 @@
+[
+  {"timestamp": "2026-04-13T09:00:01", "event_type": "login_success", "user": "alice", "ip": "192.168.1.10"},
+  {"timestamp": "2026-04-13T09:02:15", "event_type": "api_request", "endpoint": "/home", "ip": "192.168.1.10", "status": 200},
+  {"timestamp": "2026-04-13T09:05:30", "event_type": "file_access", "user": "alice", "file": "report.pdf", "action": "read"},
+  {"timestamp": "2026-04-13T09:10:12", "event_type": "logout", "user": "alice", "ip": "192.168.1.10"},
+  {"timestamp": "2026-04-13T09:15:45", "event_type": "login_success", "user": "bob", "ip": "192.168.1.20"},
+  {"timestamp": "2026-04-13T09:17:00", "event_type": "api_request", "endpoint": "/dashboard", "ip": "192.168.1.20", "status": 200}
+]
