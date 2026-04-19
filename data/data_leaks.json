@@ -1,7 +1,0 @@
-[
-  {"timestamp": "2026-04-13T12:00:01", "event_type": "login_success", "user": "john", "ip": "192.168.1.50"},
-  {"timestamp": "2026-04-13T12:02:10", "event_type": "file_access", "user": "john", "file": "customer_db.sql", "action": "read"},
-  {"timestamp": "2026-04-13T12:03:20", "event_type": "data_download", "user": "john", "size_mb": 1200},
-  {"timestamp": "2026-04-13T12:04:00", "event_type": "data_download", "user": "john", "size_mb": 800},
-  {"timestamp": "2026-04-13T12:05:10", "event_type": "logout", "user": "john", "ip": "192.168.1.50"}
-]

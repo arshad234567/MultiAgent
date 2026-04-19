@@ -1,6 +1,6 @@
-from fetch_market_data import fetch_market_data
-from generate_positions import generate_positions
-from generate_limits import get_limits
+from data.fetch_market_data import fetch_market_data
+from data.generate_positions import generate_positions
+from data.generate_limits import get_limits
 from services.breach_detector import detect_breach
 
 
