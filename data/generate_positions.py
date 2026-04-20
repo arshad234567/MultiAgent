@@ -22,7 +22,7 @@ def generate_positions(symbols, latest_prices, limits, volatility):
         allocated_money = capital * weight
         quantity = int(allocated_money / price)
 
-        # 🔥 volatility impact (realistic behavior)
+        #volatility impact (realistic behavior)
         if volatility[symbol] > 0.03:
             quantity = int(quantity * 1.2)
 

@@ -30,11 +30,11 @@ def run():
     # Detect breaches
     breaches = detect_breach(positions, limits)
 
-    print("\n📊 Positions:")
+    print("\n Positions:")
     for p in positions:
         print(p)
 
-    print("\n🚨 Breaches:")
+    print("\n Breaches:")
     print(breaches)
 
 
