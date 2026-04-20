@@ -1,14 +1,15 @@
-from data.fetch_market_data import fetch_market_data
 from data.generate_positions import generate_positions
 from data.generate_limits import get_limits
+from database.load_data import load_market_data
 from services.breach_detector import detect_breach
 
 
 def run():
     symbols = ["AAPL", "MSFT", "GOOG", "TSLA"]
 
-    # Fetch real market data
-    data, volatility = fetch_market_data(symbols)
+    # Load data from DB
+    data = load_market_data()
+    data.set_index("Date", inplace=True)
 
     # Get limits
     limits = get_limits()
@@ -16,15 +17,12 @@ def run():
     # Latest prices
     latest_prices = data.iloc[-1].to_dict()
 
-    # Latest volatility
-    latest_volatility = volatility.iloc[-1].to_dict()
-
-    # Generate realistic positions
+    # Generate positions
     positions = generate_positions(
         symbols,
         latest_prices,
         limits,
-        latest_volatility
+        {}   # temporary
     )
 
     # Detect breaches
