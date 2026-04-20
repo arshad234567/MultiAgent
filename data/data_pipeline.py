@@ -7,17 +7,35 @@ from services.breach_detector import detect_breach
 def run():
     symbols = ["AAPL", "MSFT", "GOOG", "TSLA"]
 
+    # Fetch real market data
     data, volatility = fetch_market_data(symbols)
 
-    positions = generate_positions(symbols)
-
+    # Get limits
     limits = get_limits()
 
+    # Latest prices
     latest_prices = data.iloc[-1].to_dict()
 
-    breaches = detect_breach(positions, latest_prices, limits)
+    # Latest volatility
+    latest_volatility = volatility.iloc[-1].to_dict()
 
-    print("Breaches:", breaches)
+    # Generate realistic positions
+    positions = generate_positions(
+        symbols,
+        latest_prices,
+        limits,
+        latest_volatility
+    )
+
+    # Detect breaches
+    breaches = detect_breach(positions, limits)
+
+    print("\n📊 Positions:")
+    for p in positions:
+        print(p)
+
+    print("\n🚨 Breaches:")
+    print(breaches)
 
 
 if __name__ == "__main__":
