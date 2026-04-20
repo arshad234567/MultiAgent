@@ -11,7 +11,7 @@ def run():
     data = load_market_data()
     data.set_index("Date", inplace=True)
 
-    # Get limits
+    # 1.Get limits
     limits = get_limits()
 
     # Latest prices
